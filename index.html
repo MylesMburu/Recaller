@@ -17,9 +17,11 @@
       <button class="tablinks" onclick="openTab(event,'Add')">
         Add a task
       </button>
-      <button class="tablinks" onclick="">All</button>
-      <button class="tablinks" onclick="">Pending</button>
-      <button class="tablinks" onclick="">Done</button>
+      <button class="tablinks" onclick="openTab(event,'All')">All</button>
+      <button class="tablinks" onclick="openTab(event,'Pending')">
+        Pending
+      </button>
+      <button class="tablinks" onclick="openTab(event,'Done')">Done</button>
     </div>
     <div id="Add" class="tabcontent">
       <form action="">
@@ -27,10 +29,18 @@
         <input type="text" />
         When's the deadline?
         <input type="date" name="" id="" />
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Add" />
       </form>
     </div>
-    <div id="All" class="tabcontent"></div>
+    <div id="All" class="tabcontent">
+      <form action="">
+        <input type="text" value="The task" readonly />
+      </form>
+      <div class="Actions">
+        <button>Edit</button>
+        <button>Delete</button>
+      </div>
+    </div>
     <div id="Pending" class="tabcontent"></div>
     <div id="Done" class="tabcontent"></div>
   </body>
