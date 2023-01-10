@@ -10,36 +10,40 @@
   </head>
   <header>
     Recaller
-    <p>recalling all your tasks</p>
+
+    <!-- adding a task -->
+    <div id="Add">
+      <form action="" id="form">
+        Task:
+        <input type="text" class="task" />
+        Deadline:
+        <input type="date" name="" id="" class="task" />
+        <input type="submit" value="Add" />
+      </form>
+    </div>
   </header>
+
   <body>
+    <!-- buttons to shift between the tabs -->
     <div class="tab">
-      <button class="tablinks" onclick="openTab(event,'Add')">
-        Add a task
-      </button>
       <button class="tablinks" onclick="openTab(event,'All')">All</button>
       <button class="tablinks" onclick="openTab(event,'Pending')">
         Pending
       </button>
       <button class="tablinks" onclick="openTab(event,'Done')">Done</button>
     </div>
-    <div id="Add" class="tabcontent">
-      <form action="">
-        What's the task?
-        <input type="text" />
-        When's the deadline?
-        <input type="date" name="" id="" />
-        <input type="submit" value="Add" />
-      </form>
-    </div>
+
     <div id="All" class="tabcontent">
-      <form action="">
-        <input type="text" value="The task" readonly />
-      </form>
+      <!-- <div class="tasks">
+        <form action="">
+          <input type="text" value="The task" readonly />
+        </form>
+      </div>
+
       <div class="Actions">
         <button>Edit</button>
         <button>Delete</button>
-      </div>
+      </div> -->
     </div>
     <div id="Pending" class="tabcontent"></div>
     <div id="Done" class="tabcontent"></div>
