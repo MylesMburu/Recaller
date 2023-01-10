@@ -23,6 +23,7 @@ window.addEventListener('load', () => {
   const form = document.getElementById('form');
   const input = document.getElementsByClassName('task');
   const list_el = document.getElementById('All');
+  const plist_el = document.getElementById('Pending');
 
   form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -35,7 +36,6 @@ window.addEventListener('load', () => {
 
    const task_content_el = document.createElement('div');
    task_content_el.classList.add('content');
-  //  task_content_el.innerHTML=task + " " + deadline;
 
    task_el.appendChild(task_content_el);
 
@@ -46,6 +46,7 @@ window.addEventListener('load', () => {
    task_input_el.setAttribute('readonly', 'readonly');
 
    task_content_el.appendChild(task_input_el);
+   const task_content_el_clone =  task_content_el.cloneNode(true);//cloning the content div so that I can use it in the pending part
 
    const task_actions_el = document.createElement('div');
    task_actions_el.classList.add('actions');
@@ -62,17 +63,41 @@ window.addEventListener('load', () => {
    task_done_el.classList.add('done');
    task_done_el.innerHTML = 'Done';
 
+   //appending buttons to actions
    task_actions_el.appendChild(task_done_el);
    task_actions_el.appendChild(task_edit_el);
    task_actions_el.appendChild(task_delete_el);
    
    task_el.appendChild(task_actions_el);
 
+   //appending the child processes to the two main parents
    list_el.appendChild(task_el);
-
+   plist_el.appendChild( task_content_el_clone);
+   
    input[0].value = '';
    input[1].value = '';
    window.alert("Task added to 'All")
+
+   task_edit_el.addEventListener('click', (e) => {
+    if (task_edit_el.innerText.toLowerCase() == "edit") {
+      task_edit_el.innerText = "Save";
+      task_input_el.removeAttribute("readonly");
+      task_input_el.focus();
+    } else {
+      task_edit_el.innerText = "Edit";
+      task_input_el.setAttribute("readonly", "readonly");
+    }
+  });
+
+  task_delete_el.addEventListener('click', (e) => {
+    list_el.removeChild(task_el);
+    plist_el.removeChild(task_content_el_clone);
+  });
+
+  task_done_el.addEventListener('click',(e) =>{
+    task_input_el.style.textDecoration = "line-through";
+    plist_el.removeChild(task_content_el_clone);
+  })
 
 })
 })
