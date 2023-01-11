@@ -9,15 +9,20 @@
     <title>Recaller App</title>
   </head>
   <header>
-    Recaller
+    <h1>RECALLER</h1>
 
     <!-- adding a task -->
     <div id="Add">
       <form action="" id="form">
-        Task:
-        <input type="text" class="task" />
-        Deadline:
-        <input type="date" name="" id="" class="task" />
+        <input type="text" class="task" placeholder="Task" />
+        <input
+          type="text"
+          name=""
+          id=""
+          class="task"
+          placeholder="Deadline"
+          onfocus="(this.type='date')"
+        />
         <input type="submit" value="Add" />
       </form>
     </div>

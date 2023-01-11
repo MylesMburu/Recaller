@@ -32,7 +32,7 @@ window.addEventListener('load', () => {
   const deadline = input[1].value;
   
    const task_el = document.createElement('div');
-   task_el.classList.add('task');
+   task_el.classList.add('tasks');
 
    const task_content_el = document.createElement('div');
    task_content_el.classList.add('content');
@@ -44,6 +44,7 @@ window.addEventListener('load', () => {
    task_input_el.type = 'text';
    task_input_el.value = task + " " +"by"+" "+ deadline;
    task_input_el.setAttribute('readonly', 'readonly');
+   task_input_el.setAttribute('style', 'width:300px')
 
    task_content_el.appendChild(task_input_el);
    const task_content_el_clone =  task_content_el.cloneNode(true);//cloning the content div so that I can use it in the pending part
@@ -76,7 +77,7 @@ window.addEventListener('load', () => {
    
    input[0].value = '';
    input[1].value = '';
-   window.alert("Task added to 'All")
+   window.alert("Task added to 'All");
 
    task_edit_el.addEventListener('click', (e) => {
     if (task_edit_el.innerText.toLowerCase() == "edit") {
@@ -95,8 +96,8 @@ window.addEventListener('load', () => {
   });
 
   task_done_el.addEventListener('click',(e) =>{
-    task_input_el.style.textDecoration = "line-through";
-    plist_el.removeChild(task_content_el_clone);
+    task_input_el.style.textDecoration = "line-through"; //strikes through the completed task
+    plist_el.removeChild(task_content_el_clone); //removes the task from pending list
   })
 
 })
