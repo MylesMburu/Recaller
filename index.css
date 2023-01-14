@@ -1,5 +1,5 @@
  body{
-  background-color: #BFD5C9;
+  background-color: #aaaaaa;
 } 
 .tab {
     overflow: hidden;
@@ -61,11 +61,11 @@ object-fit: fill;
     gap: 1rem;
   }
   h1{
-    color: #006373;
+    color: #eeeeee;
     font-size: xx-large;
   }
-  .tasks{
-    background-color: #00A4B4;
+  .tasks , .tasks_clone{
+    background-color: #cccccc;
     display: flex;
     justify-content: space-around;
     padding: 0.5rem;

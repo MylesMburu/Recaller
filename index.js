@@ -30,6 +30,11 @@ window.addEventListener('load', () => {
 
   const task = input[0].value;
   const deadline = input[1].value;
+
+  if(!task){
+    alert('Please fill out a task');
+    return;
+  }
   
    const task_el = document.createElement('div');
    task_el.classList.add('tasks');
@@ -48,6 +53,7 @@ window.addEventListener('load', () => {
 
    task_content_el.appendChild(task_input_el);
    const task_content_el_clone =  task_content_el.cloneNode(true);//cloning the content div so that I can use it in the pending part
+   task_content_el_clone.classList.add('tasks_clone');
 
    const task_actions_el = document.createElement('div');
    task_actions_el.classList.add('actions');
