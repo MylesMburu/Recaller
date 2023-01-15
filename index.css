@@ -103,5 +103,13 @@ object-fit: fill;
     transition: 0.4s;
   }
   
-  
+  /*===== MEDIA QUERIES FOR SMALL DEVICES====*/
+@media screen and (max-width: 600px){
+  .tasks , .tasks_clone{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
   
